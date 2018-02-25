@@ -43,8 +43,18 @@
         </table>
         </body>
         </html>
-        </div>
-    </center>
+        <br>
+	    <p>Find a GPG/PGP path of trust:</p>
+		<form method="GET" action="https://pgp.cs.uu.nl/mk_path.cgi">
+		    your key id :
+		    <input type=text    name=FROM   size="10">
+            <p>
+            <input type=hidden  name=TO     value="2C65744B">
+            <input type=submit  name=PATHS  value="find trust paths to me">
+            <input type=reset   name=reset  value="reset">
+		</form>
+	</center>
+</div>
 <h1>&nbsp;</h1>
 
 <div style="float:top; margin:50">
