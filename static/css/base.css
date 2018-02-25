@@ -1,0 +1,49 @@
+.row1 {
+	background: mintcream;
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+}
+
+.row2 {
+	background: white;
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+}
+
+th.table-header {
+	background: #FFFFCC;
+	align:center
+}
+
+td.table-header {
+	background: #FFFFCC;
+	text-align:center;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+}
+
+.download {
+	padding-left:10px;
+	padding-right:10px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+}
+
+.table-entry {
+	padding-left: 10px;
+	padding-right: 5px;
+}
+
+.basic-table {
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+	border-collapse: collapse;
+	empty-cells: show;
+}
