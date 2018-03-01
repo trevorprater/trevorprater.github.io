@@ -37,7 +37,7 @@
     <div style="float:left; width: 90%;">
         <hr style="float:left; width:50%;"><br><br>
         <body>
-            Based on my empirical observations, price seasonality appears to be a strong indicator for predicting volatility...<br><br>
+            A close friend once said, <i>'all you have to do is ride the waves of the whales'</i>. In this post, I present a simple strategy for doing just that. To jump right in, I've found, purely through empirical observations, that price seasonality appears to be a strong indicator for predicting volatility...<br><br>
             In the graphs below, we plot the following:<br>
             <div style="float:center; width:50%">
                 <i>
@@ -47,15 +47,15 @@
                 </i>
             </div>
             <br>
-            This strategy is relatively new to my toolkit, thus it lacks sufficient backtesting data and other useful metrics. In any case, w.r.t empirical observations, I've manged to profit during recent day-trading sessions.<br><br> <b>Cursory observations</b>: It seems that the seasonality subplots are increasingly shifting the left, over time. I believe this is due to other actors utilizing similar strategies. It is clear to me that the local max and local min, while visibly optimal, are not the ideal points in time to make a trade. I've found that the optimal execution time observes a delta of (local_max|local_min)*-0.15, which translates to -9 minutes for day trading (hourly observations) and -3.6 hours for swing trades (daily observations).
+            This strategy is relatively new to my toolkit, thus it lacks sufficient backtesting, correlation, and covariance methodologies. In any case, I've manged to profit by anticipating impending price fluctuations using the following graphs.<br><br> <b>Some cursory observations</b>: It seems that the seasonality subplots are increasingly shifting the left, over time. I believe this is due to other actors utilizing similar strategies. It is clear to me that the local max and local min, while visibly optimal, are not the ideal points in time to make a trade. I've found that the optimal execution time observes a delta of (local_max|local_min)*-0.15, which translates to -9 minutes for day trading (hourly observations) and -3.6 hours for swing trades (daily observations).
             <br><br>
-            For example, using Bitcoin's daily plot, it is evident that the price typically rises at 11:00 UTC. In practice, I noticed the upward swing occurred rougly 9 minutes earlier at 10:51 UTC, which makes sense; others are anticipating it as well. I'm not sure what I'm getting at here, other than it's obvious to me that these oscillations are shifting by roughly -15% (time) at the observed intervals. In the future, I will determine the optimal delta (it's most likely not -15%), along with the rate of change the delta experiences.
+            <b>Example</b>: Observing Bitcoin's daily plot, it is evident that the price typically rises at 11:00 UTC. In practice, I noticed the upward swing occurred rougly 9 minutes earlier at 10:51 UTC, which makes sense; others are anticipating it as well. I'm not sure what I'm getting at here, other than it's obvious to me that these oscillations are shifting by roughly -15% (time) at the observed intervals. In the future, I will determine the optimal delta (it's most likely not -15%), along with the rate of change the delta experiences.
             <br><br>
             It would be nice if I had more data to back up my claims, but I just haven't gotten around to it yet. Try it for yourself and please don't hesitate to share your results!
             <br><br>
             If you would like to view more, I've included an image <a href="../static/img/seasonality-dump">dump</a> of the top 100 coins (and a <a href="../static/img/seasonality-dump.zip">.zip)</a>.<br>
             The source code used to generate the graphs can be viewed <a href="https://github.com/trevorprater/trevorprater.github.io/blob/master/src/seasonality/load_all.py">here</a>.<br><br>
-            <img src="../static/img/seasonality-bitcoin.png" width="100%"/><br/>
+            <img src="../static/img/seasonality-bitcoin.png" width="1000px"/><br/>
         </body>
     </div>
 </div>
