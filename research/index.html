@@ -1,0 +1,66 @@
+<html>
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-61298237-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+        gtag('config', 'UA-61298237-4');
+</script>
+<title></title>
+<link rel="stylesheet" type="text/css" href="static/css/base.css"/>
+
+</head>
+<body>
+<center>
+<span style='margin-right:1em; display:inline-block;'>
+<a href="index.html">Home</a></span>
+<span style='margin-right:1em; display:inline-block;'>
+<a href="/research">Research</a></span>
+<span style='margin-right:1em; display:inline-block;'>
+<a href="/research">Writings</a></span>
+<span style='margin-right:1em; display:inline-block;'>
+<a href="/art">Art</a></span>
+<span style='margin-right:1em; display:inline-block;'>
+<a href="/photos">Photography</a></span>
+<span style='margin-right:1em; display:inline-block;'>
+<a href="https://github.com/trevorprater">Github</a></span>
+<br/>
+</center>
+
+<p/>
+<hr>
+<div style="float:left; margin-left:25; width:77%;" id="seasonality_0">
+    <h2>Price Prediction and Seasonality</h2>
+    <i>Feb 28 2018</i><br/><br/>
+    <div style="float:left; width: 90%;">
+        <hr style="float:left; width:50%;"><br><br>
+        <body>
+            It appears that seasonality is a strong indicator for predicting price oscillation...<br><br>
+            In the graphs below, we plot the following:<br>
+            <div style="float:center; width:50%">
+                <i>
+                    <br>- Expected price and uncertainty thresholds
+                    <br>- Historical hourly price movement
+                    <br>- Historical daily price movement
+                </i>
+            </div>
+            <br>
+            This strategy is relatively new to my toolkit, thus it lacks sufficient backtesting data and other useful metrics. In any case, w.r.t empirical observations, I've manged to profit during recent day-trading sessions. It seems that the seasonality subplots are increasingly shifting the left, over time. I believe this is due to other actors utilizing similar strategies. It is clear to me that it is not optimal to trade at the local max or local min of these graphs, but roughly -15% of the observed interval (1 hour or 1 day; 9 minutes and 3.6 hours repsectively) prior to the local max/min.
+            <br><br>
+            For example, using Bitcoin's daily plot, it is evident that the price typically rises at 11:00 UTC. In practice, I noticed the upward swing occurred rougly 9 minutes earlier at 10:51 UTC, which makes sense; others are anticipating it as well. I'm not sure what I'm getting at here, other than it's obvious to me that these oscillations are shifting by roughly -15% (time) at the observed intervals. In the future, I will determine the optimal delta (it's most likely not -15%), along with the rate of change the delta experiences.
+            <br><br>
+            <img src="../static/img/seasonality-bitcoin.png" height="50%"/><br/>
+            If you would like to view more, I've included an image <a href="../static/img/seasonality-dump">dump</a> of the top 100 coins (and a <a href="../static/img/seasonality-dump.zip">.zip)</a>.<br><br>
+			The source code used to generate the graphs can be viewed <a href="https://github.com/trevorprater/trevorprater.github.io/src/seasonality/load_all.py">here</a>.
+        </body>
+    </div>
+</div>
+
+<div style="float:right; width:20%; margin-top:2%;">
+    <div style="position:fixed;">
+        <a href="#seasonality_0">Price Prediction and Seasonality</a>
+    </div>
+</div>
+
