@@ -108,7 +108,7 @@ body {
              $(data).find("a").each(function(){
                 // will loop through 
                 console.log("Found a file: " + $(this).attr("href"));
-                photos.append($(this).attr("href"));
+                photos.push($(this).attr("href"));
              });
           }
         });
