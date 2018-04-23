@@ -109,7 +109,7 @@ body {
             document.body.appendChild('<div class="row">');
             document.body.appendChild('    <div class="column">');
             for(i = 0; i < photos.length; i++){
-                document.write('<img src="../static/img/' + _dir + '/' + photos[i] + '" style="width:30%">');
+                document.body.appendChild('<img src="../static/img/' + _dir + '/' + photos[i] + '" style="width:30%">');
                 if(i > 1 && i % images_per_column == 0) {
                     document.body.appendChild('</div>');
                     document.body.appendChild('<div class="column">');
