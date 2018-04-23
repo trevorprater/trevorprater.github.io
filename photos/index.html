@@ -99,39 +99,29 @@ body {
 </div>
 
 <script type="text/javascript" name="load_images">
-    function load_images(_dir) {
+    //function load_images(_dir) {
         var _dir = 'self';
-        var fs = require('fs');
-        var num_images = fs.readdirSync('./' + _dir).length();
+        var photos = [];
+        $.ajax({
+          url: "https://trevorprater.com/static/img/" + _dir,
+          success: function(data){
+             $(data).find("td > a").each(function(){
+                // will loop through 
+                console.log("Found a file: " + $(this).attr("href"));
+                photos.append($(this).attr("href"));
+             });
+          }
+        });
+        document.write(photos);
         var images_per_column = num_images / 5;
         document.write('<div class="row">');
 
-        var files = fs.readdirSync('./' + _dir).forEach(function(file) {
-            var ctr = 0;
-            if (!fs.statSync('./' + _dir + '/' + file).isDirectory()) {
-                if(ctr == 0) {
                     document.write('<div class="column">');
-                }
                 document.write('<img src="' + './' + _dir + '/' + file + '" style="width:100%">');
-                ctr++;
-                if (ctr == images_per_column - 1) {
                     document.write('</div>');
-                    ctr = 0;
-                }
-            }
-        });
         document.write("</div>");
-    }
+    //}
 
-	$.ajax({
-	  url: "https://trevorprater.com/static/img/osaka",
-	  success: function(data){
-		 $(data).find("td > a").each(function(){
-			// will loop through 
-			console.log("Found a file: " + $(this).attr("href"));
-		 });
-	  }
-	});
 </script>
 
 
