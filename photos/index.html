@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-61298237-4"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&amp;subset=latin-ext" rel="stylesheet">
+<script>
+  window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+        gtag('config', 'UA-61298237-4');
+</script>
+<title></title>
+<link rel="stylesheet" type="text/css" href="../static/css/base.css"/>
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+.header {
+    text-align: center;
+    padding: 32px;
+}
+
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+    .column {
+        -ms-flex: 50%;
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+</style>
+
+</head>
+<body>
+<div style="font-family: 'Open Sans', sans-serif; margin-right: 4%;" align="right">
+    <span style='margin-right:1em; display:inline-block;'>
+        <a href="./about">About</a></span>
+    <span style='margin-right:1em; display:inline-block;'>
+        <a href="https://github.com/trevorprater">Github</a></span>
+</div></p>
+<div style="float:right; width:10%; margin-top:2%; font-family: 'Open Sans', sans-serif;">
+    <div style="position:fixed;" align="right">
+        <a href="./art">art</a></br>
+        <a href="./self">self</a></br>
+        <a href="./nyc-metro">nyc-metro</a></br>
+        <a href="./tokyo-metro">tokyo-metro</a></br>
+        <a href="./osaka">osaka</a></br>
+        <a href="./okinawa">okinawa</a></br>
+        <a href="./kentucky">kentucky</a></br>
+        <a href="./california">california</a></br>
+        <a href="./barcelona">barcelona</a></br>
+        <a href="./chiangmai">chiangmai</a></br>
+        <a href="./bangkok">bangkok</a></br>
+        <a href="./miyakojima">miyakojima</a></br>
+    </div>
+</div/>
+
+<!-- Header -->
+<div class="header">
+  <p>Photos</p>
+</div>
+
+<script type="text/javascript" name="load_images">
+    function load_images(_dir) {
+        var _dir = 'self';
+        var fs = require('fs');
+        var num_images = fs.readdirSync('./' + _dir).length();
+        var images_per_column = num_images / 5;
+        document.write('<div class="row">');
+
+        var files = fs.readdirSync('./' + _dir).forEach(function(file) {
+            var ctr = 0;
+            if (!fs.statSync('./' + _dir + '/' + file).isDirectory()) {
+                if(ctr == 0) {
+                    document.write('<div class="column">');
+                }
+                document.write('<img src="' + './' + _dir + '/' + file + '" style="width:100%">');
+                ctr++;
+                if (ctr == images_per_column - 1) {
+                    document.write('</div>');
+                    ctr = 0;
+                }
+            }
+        });
+        document.write("</div>");
+    }
+
+	$.ajax({
+	  url: "../static/img/osaka",
+	  success: function(data){
+		 $(data).find("td > a").each(function(){
+			// will loop through 
+			alert("Found a file: " + $(this).attr("href"));
+		 });
+	  }
+	});
+</script>
+
+
+</body>
+</html>
+<!--
+-->
