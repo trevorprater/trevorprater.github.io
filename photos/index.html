@@ -112,6 +112,7 @@ body {
                 document.write('<img src="../static/img/' + _dir + '/' + photos[i] + '" style="width:30%">');
                 if(i > 1 && i % images_per_column == 0) {
                     document.write('</div>');
+                    document.write('<div class="column">');
                 } else if (i == photos.length - 1) {
                     document.write('</div>');
                 }
