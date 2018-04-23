@@ -93,7 +93,7 @@ body {
 
 <script type="text/javascript" name="load_images">
     //function load_images(_dir) {
-        var _dir = 'tokyo';
+        var _dir = 'tokyo-metro';
         var photos = [];
         $.ajax({
           url: "https://trevorprater.com/static/img/" + _dir,
@@ -106,15 +106,15 @@ body {
                 }
              });
             var images_per_column = Math.ceil(photos.length / 6);
-            document.write('<div class="row">');
-            document.write('    <div class="column">');
+            document.body.appendChild('<div class="row">');
+            document.body.appendChild('    <div class="column">');
             for(i = 0; i < photos.length; i++){
                 document.write('<img src="../static/img/' + _dir + '/' + photos[i] + '" style="width:30%">');
                 if(i > 1 && i % images_per_column == 0) {
-                    document.write('</div>');
-                    document.write('<div class="column">');
+                    document.body.appendChild('</div>');
+                    document.body.appendChild('<div class="column">');
                 } else if (i == photos.length - 1) {
-                    document.write('</div>');
+                    document.body.appendChild('</div>');
                 }
             }
             document.write("</div>");
