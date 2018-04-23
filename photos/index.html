@@ -17,17 +17,14 @@
 * {
     box-sizing: border-box;
 }
-
 body {
     margin: 0;
     font-family: Arial;
 }
-
 .header {
     text-align: center;
     padding: 32px;
 }
-
 .row {
     display: -ms-flexbox; /* IE10 */
     display: flex;
@@ -35,7 +32,6 @@ body {
     flex-wrap: wrap;
     padding: 0 4px;
 }
-
 /* Create four equal columns that sits next to each other */
 .column {
     -ms-flex: 25%; /* IE10 */
@@ -43,12 +39,10 @@ body {
     max-width: 25%;
     padding: 0 4px;
 }
-
 .column img {
     margin-top: 8px;
     vertical-align: middle;
 }
-
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
     .column {
@@ -57,7 +51,6 @@ body {
         max-width: 50%;
     }
 }
-
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
     .column {
@@ -106,7 +99,6 @@ body {
           url: "https://trevorprater.com/static/img/" + _dir,
           success: function(data){
              $(data).find("a").each(function(){
-                // will loop through 
                 var fname = $(this).attr("href");
                 var extension = fname.substr(fname.lastIndexOf('.') + 1).toLowerCase();
                 if(['jpg', 'jpeg', 'png', 'gif', 'tiff', 'webm'].indexOf(extension) >= 0) {
@@ -116,12 +108,17 @@ body {
           }
         });
         console.log(photos);
-        var images_per_column = num_images / 5;
+        var images_per_column = photos.length / 4;
         document.write('<div class="row">');
-
-                    document.write('<div class="column">');
-                document.write('<img src="' + './' + _dir + '/' + file + '" style="width:100%">');
-                    document.write('</div>');
+        document.write('    <div class="column">');
+        for(var i = 0; i < images_per_column; i++){
+            document.write('<img src="' + photos[i] + '" style="width:100%">');
+            if(i > 1 && i % images_per_column == 0) {
+                document.write('</div>');
+            } else if (i == photos.length - 1) {
+                document.write('</div>');
+            }
+        }
         document.write("</div>");
     //}
 
