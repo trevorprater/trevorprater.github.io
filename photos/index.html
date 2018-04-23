@@ -105,7 +105,7 @@ body {
         $.ajax({
           url: "https://trevorprater.com/static/img/" + _dir,
           success: function(data){
-             $(data).find("td > a").each(function(){
+             $(data).find("a").each(function(){
                 // will loop through 
                 console.log("Found a file: " + $(this).attr("href"));
                 photos.append($(this).attr("href"));
