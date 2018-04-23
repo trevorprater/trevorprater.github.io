@@ -106,18 +106,18 @@ body {
                 }
              });
             var images_per_column = Math.ceil(photos.length / 6);
-            document.body.append('<div class="row">');
-            document.body.append('    <div class="column">');
+            $("body").append('<div class="row">');
+            $("body").append('    <div class="column">');
             for(i = 0; i < photos.length; i++){
-                document.body.append('<img src="../static/img/' + _dir + '/' + photos[i] + '" style="width:30%">');
+                $("body").append('<img src="../static/img/' + _dir + '/' + photos[i] + '" style="width:30%">');
                 if(i > 1 && i % images_per_column == 0) {
-                    document.body.append('</div>');
-                    document.body.append('<div class="column">');
+                    $("body").append('</div>');
+                    $("body").append('<div class="column">');
                 } else if (i == photos.length - 1) {
-                    document.body.append('</div>');
+                    $("body").append('</div>');
                 }
             }
-            document.body.append("</div>");
+            $("body").append("</div>");
           }
         });
     //}
