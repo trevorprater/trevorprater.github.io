@@ -105,12 +105,11 @@ body {
                     photos.push(fname);
                 }
              });
-            var len = photos.length;
             var images_per_column = Math.ceil(photos.length / 4);
             document.write('<div class="row">');
             document.write('    <div class="column">');
-            for(i = 0; i < images_per_column; i++){
-                document.write('<img src="../static/img/' + _dir + '/' + photos[i] + '" style="width:20%">');
+            for(i = 0; i < photos.length; i++){
+                document.write('<img src="../static/img/' + _dir + '/' + photos[i] + '" style="width:30%">');
                 if(i > 1 && i % images_per_column == 0) {
                     document.write('</div>');
                 } else if (i == photos.length - 1) {
