@@ -108,10 +108,10 @@ body {
           }
         });
         console.log(photos);
-        var images_per_column = photos.length / 4;
+        var images_per_column = Math.ceil(photos.length / 4);
         document.write('<div class="row">');
         document.write('    <div class="column">');
-        for(var i = 0; i < images_per_column; i++){
+        for(i = 0; i < images_per_column; i++){
             document.write('<img src="' + photos[i] + '" style="width:100%">');
             if(i > 1 && i % images_per_column == 0) {
                 document.write('</div>');
