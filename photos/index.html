@@ -109,7 +109,7 @@ body {
                 // will loop through 
                 var fname = $(this).attr("href");
                 var extension = fname.substr(fname.lastIndexOf('.') + 1).toLowerCase();
-                if(['jpg', 'jpeg', 'png', 'gif', 'tiff', 'webm'].indexOf(str) >= 0) {
+                if(['jpg', 'jpeg', 'png', 'gif', 'tiff', 'webm'].indexOf(extension) >= 0) {
                     photos.push(fname);
                 }
              });
