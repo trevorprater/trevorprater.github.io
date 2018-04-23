@@ -110,7 +110,7 @@ body {
             document.write('<div class="row">');
             document.write('    <div class="column">');
             for(i = 0; i < images_per_column; i++){
-                document.write('<img src="' + photos[i] + '" style="width:100%">');
+                document.write('<img src="../static/img/' + _dir + '/' + photos[i] + '" style="width:100%">');
                 if(i > 1 && i % images_per_column == 0) {
                     document.write('</div>');
                 } else if (i == photos.length - 1) {
